@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g9P/RX+jr+9hk3QNX9F7tqkXJAD2OfH1RszPZXgJ/y8idVu4WVAv9GMaP6a3BqUNvIgx15FWjvF6dyeQWX78GA==",
+  "dgSpecHash": "y+pPzk1tJa8aYLojuH873NkDg3fQiwHN0pnHkiDty+0CFvIPv6Bv/at8/bdOq40cYeKSEVs6n76C3qdLfq3ErA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andrew\\Desktop\\pet-projects\\TeamProject\\TeamProject.Dto\\TeamProject.Dto.csproj",
+  "projectFilePath": "C:\\Users\\Andrew\\Desktop\\pet-projects\\tpb-backend\\TeamProject.Dto\\TeamProject.Dto.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
