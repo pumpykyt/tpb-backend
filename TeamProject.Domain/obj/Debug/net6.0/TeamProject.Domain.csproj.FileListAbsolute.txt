@@ -1,0 +1,17 @@
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\bin\Debug\net6.0\TeamProject.Domain.deps.json
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\bin\Debug\net6.0\TeamProject.Domain.runtimeconfig.json
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\bin\Debug\net6.0\TeamProject.Domain.dll
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\bin\Debug\net6.0\ref\TeamProject.Domain.dll
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\bin\Debug\net6.0\TeamProject.Domain.pdb
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\bin\Debug\net6.0\TeamProject.Dto.dll
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\bin\Debug\net6.0\TeamProject.Dto.pdb
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\TeamProject.Domain.csproj.AssemblyReference.cache
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\TeamProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\TeamProject.Domain.AssemblyInfoInputs.cache
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\TeamProject.Domain.AssemblyInfo.cs
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\TeamProject.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\TeamProject.Domain.csproj.CopyComplete
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\TeamProject.Domain.dll
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\ref\TeamProject.Domain.dll
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\TeamProject.Domain.pdb
+C:\Users\Andrew\Desktop\pet-projects\TeamProject\TeamProject.Domain\obj\Debug\net6.0\TeamProject.Domain.genruntimeconfig.cache
