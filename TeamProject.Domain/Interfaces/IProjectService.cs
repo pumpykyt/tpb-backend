@@ -1,4 +1,5 @@
-﻿using TeamProject.Dto.Requests;
+﻿using System.Threading.Tasks;
+using TeamProject.Dto.Requests;
 using TeamProject.Dto.Responses;
 
 namespace TeamProject.Domain.Interfaces;
