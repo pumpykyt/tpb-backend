@@ -43,4 +43,11 @@ public class ProjectController : ControllerBase
         var result = await _projectService.GetProjectsAsync(pageNumber, pageSize, searchQuery, sortQuery);
         return Ok(result);
     }
+
+    [HttpGet("user")]
+    public async Task<IActionResult> GetUserProjectsAsync(string userId)
+    {
+        var result = await _projectService.GetUserProjectsAsync(userId);
+        return Ok(result);
+    }
 }

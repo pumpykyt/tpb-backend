@@ -10,4 +10,5 @@ public interface IProjectService
     Task<PagedResponse<ProjectResponse>> GetProjectsAsync(int pageNumber, int pageSize, string searchQuery, string sortQuery);
     Task<bool> UpdateProjectAsync(ProjectUpdateRequest model);
     Task<bool> DeleteProjectAsync(int projectId);
+    Task<List<ProjectResponse>> GetUserProjectsAsync(string userId);
 }

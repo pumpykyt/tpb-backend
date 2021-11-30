@@ -12,5 +12,8 @@ public class MapperConfig : Profile
         CreateMap<ProjectRequest, Project>();
         CreateMap<ProjectUpdateRequest, Project>();
         CreateMap<Project, ProjectResponse>();
+        CreateMap<JobRequest, Job>();
+        CreateMap<Job, JobResponse>()
+            .ForMember(dest => dest.UserName, src => src.MapFrom(t => t.User.UserName));
     }
 }

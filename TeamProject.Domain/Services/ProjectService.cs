@@ -25,12 +25,15 @@ public class ProjectService : IProjectService
     public async Task<bool> CreateProjectAsync(ProjectRequest model)
     {
         var entity = _mapper.Map<ProjectRequest, Project>(model);
+        entity.RoomName = Guid.NewGuid()
+                              .ToString();
         await _context.Projects.AddAsync(entity);
         var created = await _context.SaveChangesAsync();
         return created > 0;
     }
 
-    public async Task<PagedResponse<ProjectResponse>> GetProjectsAsync(int pageNumber, int pageSize, string searchQuery, string sortQuery)
+    public async Task<PagedResponse<ProjectResponse>> GetProjectsAsync(int pageNumber, int pageSize, 
+        string searchQuery, string sortQuery)
     {
         var entities = _context.Projects.AsNoTracking()
                                         .AsQueryable();
@@ -75,5 +78,14 @@ public class ProjectService : IProjectService
         _context.Projects.Remove(entity);
         var deleted = await _context.SaveChangesAsync();
         return deleted > 0;
+    }
+
+    public async Task<List<ProjectResponse>> GetUserProjectsAsync(string userId)
+    {
+        var user = await _context.Users.AsNoTracking()
+                                       .Include(t => t.Projects)
+                                       .SingleOrDefaultAsync(t => t.Id == userId);
+        
+        return _mapper.Map<List<Project>, List<ProjectResponse>>(user.Projects.ToList());
     }
 }
