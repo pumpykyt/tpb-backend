@@ -1,32 +1,29 @@
 ﻿using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using TeamProject.Application.Commands;
 using TeamProject.Domain.Interfaces;
 using TeamProject.Dto.Requests;
 
 namespace TeamProject.Api.Controllers;
 
-[Route("api/[controller]")]
-[ApiController]
-public class AuthController : ControllerBase
+public sealed class AuthController : ApiControllerBase
 {
-    private readonly IAuthService _authService;
-
-    public AuthController(IAuthService authService)
-    {
-        _authService = authService;
-    }
-
+    public AuthController(IMediator mediator) : base(mediator) { }
+    
     [HttpPost("login")]
     public async Task<IActionResult> LoginAsync(LoginRequest model)
     {
-        var result = await _authService.LoginAsync(model);
+        var command = new LoginCommand(model);
+        var result = await Mediator.Send(command);
         return result == null ? BadRequest() : Ok(result);
     }
 
     [HttpPost("register")]
     public async Task<IActionResult> RegisterAsync(RegisterRequest model)
     {
-        var result = await _authService.RegisterAsync(model);
+        var command = new RegisterCommand(model);
+        var result = await Mediator.Send(command);
         return result == null ? BadRequest() : Ok(result);
     }
 }

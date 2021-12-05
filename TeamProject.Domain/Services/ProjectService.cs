@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using TeamProject.Domain.Data;
 using TeamProject.Domain.Data.Entities;
+using TeamProject.Domain.Exceptions;
 using TeamProject.Domain.Interfaces;
 using TeamProject.Dto.Requests;
 using TeamProject.Dto.Responses;
@@ -67,6 +69,7 @@ public class ProjectService : IProjectService
     public async Task<bool> UpdateProjectAsync(ProjectUpdateRequest model)
     {
         var entity = _mapper.Map<ProjectUpdateRequest, Project>(model);
+        if (entity == null) throw new HttpException(HttpStatusCode.NotFound);
         _context.Projects.Update(entity);
         var updated = await _context.SaveChangesAsync();
         return updated > 0;
@@ -75,6 +78,7 @@ public class ProjectService : IProjectService
     public async Task<bool> DeleteProjectAsync(int projectId)
     {
         var entity = await _context.Projects.SingleOrDefaultAsync(t => t.Id == projectId);
+        if (entity == null) throw new HttpException(HttpStatusCode.NotFound);
         _context.Projects.Remove(entity);
         var deleted = await _context.SaveChangesAsync();
         return deleted > 0;

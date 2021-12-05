@@ -8,4 +8,6 @@ public interface IApplicationService
     Task<bool> CreateApplicationAsync(ApplicationRequest model);
     Task<List<ApplicationResponse>> GetUserApplicationsAsync(string userId);
     Task<bool> DeleteApplicationAsync(int applicationId);
+    Task<bool> AcceptApplicationAsync(int applicationId);
+    Task<bool> RejectApplicationAsync(int applicationId);
 }

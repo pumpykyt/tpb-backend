@@ -1,7 +1,9 @@
-﻿using AutoMapper;
+﻿using System.Net;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using TeamProject.Domain.Data;
 using TeamProject.Domain.Data.Entities;
+using TeamProject.Domain.Exceptions;
 using TeamProject.Domain.Interfaces;
 using TeamProject.Dto.Requests;
 using TeamProject.Dto.Responses;
@@ -30,6 +32,7 @@ public class JobService : IJobService
     public async Task<bool> DeleteJobAsync(int jobId)
     {
         var entity = await _context.Jobs.SingleOrDefaultAsync(t => t.Id == jobId);
+        if (entity == null) throw new HttpException(HttpStatusCode.NotFound);
         _context.Jobs.Remove(entity);
         var deleted = await _context.SaveChangesAsync();
         return deleted > 0;
