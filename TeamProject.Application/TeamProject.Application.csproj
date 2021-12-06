@@ -7,12 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Commands" />
-      <Folder Include="Handlers" />
-      <Folder Include="Queries" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\TeamProject.Domain\TeamProject.Domain.csproj" />
       <ProjectReference Include="..\TeamProject.Dto\TeamProject.Dto.csproj" />
     </ItemGroup>
