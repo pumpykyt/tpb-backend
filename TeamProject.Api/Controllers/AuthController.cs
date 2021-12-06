@@ -10,20 +10,12 @@ namespace TeamProject.Api.Controllers;
 public sealed class AuthController : ApiControllerBase
 {
     public AuthController(IMediator mediator) : base(mediator) { }
-    
+
     [HttpPost("login")]
-    public async Task<IActionResult> LoginAsync(LoginRequest model)
-    {
-        var command = new LoginCommand(model);
-        var result = await Mediator.Send(command);
-        return result == null ? BadRequest() : Ok(result);
-    }
+    public async Task<IActionResult> LoginAsync(LoginRequest model) => 
+        Ok(await Mediator.Send(new LoginCommand(model)));
 
     [HttpPost("register")]
-    public async Task<IActionResult> RegisterAsync(RegisterRequest model)
-    {
-        var command = new RegisterCommand(model);
-        var result = await Mediator.Send(command);
-        return result == null ? BadRequest() : Ok(result);
-    }
+    public async Task<IActionResult> RegisterAsync(RegisterRequest model) =>
+        Ok(await Mediator.Send(new RegisterCommand(model)));
 }

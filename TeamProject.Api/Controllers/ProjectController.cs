@@ -13,43 +13,23 @@ public sealed class ProjectController : ApiControllerBase
     public ProjectController(IMediator mediator) : base(mediator) { }
 
     [HttpPost]
-    public async Task<IActionResult> CreateProjectAsync(ProjectRequest model)
-    {
-        var command = new CreateProjectCommand(model);
-        var result = await Mediator.Send(command);
-        return result == false ? BadRequest() : Ok();
-    }
-    
-    [HttpPut]
-    public async Task<IActionResult> UpdateProjectAsync(ProjectUpdateRequest model)
-    {
+    public async Task<IActionResult> CreateProjectAsync(ProjectRequest model) =>
+        Ok(await Mediator.Send(new CreateProjectCommand(model)));
 
-        var command = new UpdateProjectCommand(model);
-        var result = await Mediator.Send(command);
-        return result == false ? BadRequest() : Ok();
-    }
-    
+    [HttpPut]
+    public async Task<IActionResult> UpdateProjectAsync(ProjectUpdateRequest model) =>
+        Ok(await Mediator.Send(new UpdateProjectCommand(model)));
+
     [HttpDelete]
-    public async Task<IActionResult> DeleteProjectAsync(int projectId)
-    {
-        var command = new DeleteProjectCommand(projectId);
-        var result = await Mediator.Send(command);
-        return result == false ? BadRequest() : Ok();
-    }
-    
+    public async Task<IActionResult> DeleteProjectAsync(int projectId) => 
+        Ok(await Mediator.Send(new DeleteProjectCommand(projectId)));
+
     [HttpGet]
-    public async Task<IActionResult> GetProjectsAsync(int pageNumber, int pageSize, string? searchQuery, string? sortQuery)
-    {
-        var query = new GetProjectsQuery(pageNumber, pageSize, searchQuery, sortQuery);
-        var result = await Mediator.Send(query);
-        return Ok(result);
-    }
+    public async Task<IActionResult> GetProjectsAsync(int pageNumber, int pageSize, 
+                                                      string? searchQuery, string? sortQuery) =>
+        Ok(await Mediator.Send(new GetProjectsQuery(pageNumber, pageSize, searchQuery, sortQuery)));
 
     [HttpGet("user")]
-    public async Task<IActionResult> GetUserProjectsAsync(string userId)
-    {
-        var query = new GetUserProjectsQuery(userId);
-        var result = await Mediator.Send(query);
-        return Ok(result);
-    }
+    public async Task<IActionResult> GetUserProjectsAsync(string userId) =>
+        Ok(await Mediator.Send(new GetUserProjectsQuery(userId)));
 }

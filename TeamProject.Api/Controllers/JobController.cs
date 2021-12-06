@@ -12,26 +12,14 @@ public sealed class JobController : ApiControllerBase
     public JobController(IMediator mediator) : base(mediator) { }
 
     [HttpPost]
-    public async Task<IActionResult> CreateJobAsync(JobRequest model)
-    {
-        var command = new CreateJobCommand(model);
-        var result = await Mediator.Send(command);
-        return result == false ? BadRequest() : Ok();
-    }
+    public async Task<IActionResult> CreateJobAsync(JobRequest model) =>
+        Ok(await Mediator.Send(new CreateJobCommand(model)));
 
     [HttpDelete]
-    public async Task<IActionResult> DeleteJobAsync(int jobId)
-    {
-        var command = new DeleteJobCommand(jobId);
-        var result = await Mediator.Send(command);
-        return result == false ? BadRequest() : Ok();
-    }
+    public async Task<IActionResult> DeleteJobAsync(int jobId) => 
+        Ok(await Mediator.Send(new DeleteJobCommand(jobId)));
 
     [HttpGet]
-    public async Task<IActionResult> GetProjectJobsAsync(int projectId)
-    {
-        var query = new GetProjectJobsQuery(projectId);
-        var result = await Mediator.Send(query);
-        return Ok(result);
-    }
+    public async Task<IActionResult> GetProjectJobsAsync(int projectId) =>
+        Ok(await Mediator.Send(new GetProjectJobsQuery(projectId)));
 }
