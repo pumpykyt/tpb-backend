@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using TeamProject.Domain.Data.Entities;
+using TeamProject.Data.Entities;
 using TeamProject.Dto.Requests;
 using TeamProject.Dto.Responses;
 

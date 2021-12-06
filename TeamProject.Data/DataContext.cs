@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using TeamProject.Domain.Data.Entities;
+using TeamProject.Data.Entities;
 
-namespace TeamProject.Domain.Data;
+namespace TeamProject.Data;
 
 public class DataContext : IdentityDbContext<User>
 {
@@ -17,14 +17,14 @@ public class DataContext : IdentityDbContext<User>
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<Project>()
-                    .HasOne(t => t.Owner)
-                    .WithMany(t => t.MyProjects)
-                    .HasForeignKey(t => t.OwnerId)
-                    .HasConstraintName("FK_Projects_Users_OwnerId")
-                    .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(t => t.Owner)
+            .WithMany(t => t.MyProjects)
+            .HasForeignKey(t => t.OwnerId)
+            .HasConstraintName("FK_Projects_Users_OwnerId")
+            .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Project>()
-                    .HasMany(t => t.Users)
-                    .WithMany(t => t.Projects);
+            .HasMany(t => t.Users)
+            .WithMany(t => t.Projects);
     }
 }

@@ -22,11 +22,11 @@ public sealed class ApplicationController : ApiControllerBase
     public async Task<IActionResult> DeleteApplicationAsync(int applicationId) =>
         Ok(await Mediator.Send(new DeleteApplicationCommand(applicationId)));
 
-    [HttpPut]
+    [HttpPut("accept")]
     public async Task<IActionResult> AcceptApplicationAsync(int applicationId) =>
         Ok(await Mediator.Send(new AcceptApplicationCommand(applicationId)));
 
-    [HttpPut]
+    [HttpPut("reject")]
     public async Task<IActionResult> RejectApplicationAsync(int applicationId) =>
         Ok(await Mediator.Send(new RejectApplicationCommand(applicationId)));
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace TeamProject.Domain.Data.Entities;
+namespace TeamProject.Data.Entities;
 
 public class User : IdentityUser
 {

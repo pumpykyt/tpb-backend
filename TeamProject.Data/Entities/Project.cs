@@ -1,4 +1,4 @@
-﻿namespace TeamProject.Domain.Data.Entities;
+﻿namespace TeamProject.Data.Entities;
 
 public class Project
 {

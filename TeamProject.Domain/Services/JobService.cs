@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using TeamProject.Domain.Data;
-using TeamProject.Domain.Data.Entities;
+using TeamProject.Data;
+using TeamProject.Data.Entities;
 using TeamProject.Domain.Exceptions;
 using TeamProject.Domain.Interfaces;
 using TeamProject.Dto.Requests;
