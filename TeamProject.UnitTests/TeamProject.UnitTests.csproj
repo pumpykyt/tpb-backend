@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="10.1.1" />
         <PackageReference Include="FluentAssertions" Version="6.2.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
@@ -17,7 +18,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Tests" />
+      <ProjectReference Include="..\TeamProject.Data\TeamProject.Data.csproj" />
+      <ProjectReference Include="..\TeamProject.Domain\TeamProject.Domain.csproj" />
     </ItemGroup>
 
 </Project>
